@@ -76,15 +76,13 @@ def write_to_MySQL(df,host,port,database_name,table,user,password):
     
     
 def main(path_to_read,path_to_save,path_of_mapping_file):
-    # print('-------------Validating paths--------------')
-    # if not os.path.exists(path_to_read):
-    #     return print(f"{path_to_read} does not exist to read from")
-    # if os.path.exists(path_to_save):
-    #     return print(f"{path_to_save} already exists")
+    print('-------------Validating paths--------------')
+    if not os.path.exists(path_to_read):
+        return print(f"{path_to_read} does not exist to read from")
+    if os.path.exists(path_to_save):
+        return print(f"{path_to_save} already exists")
+             
     print('-------------Finding parquet files from path--------------')
-    
-    
-    
     parquet_files = os.listdir(path_to_read)
     parquet_files = [os.path.join(path_to_read , file) for file in parquet_files]
     
@@ -107,7 +105,6 @@ def main(path_to_read,path_to_save,path_of_mapping_file):
         return print('No DataFrames created from parquet files.')
     
     print('Filtering out rows with null values, duplicates, and columns not in month 6 and 7')
-    
     df_union = filter_null_duplicates_and_month(df_union)
     
     print('Find most searched keyword for each user')
@@ -133,10 +130,10 @@ def main(path_to_read,path_to_save,path_of_mapping_file):
     df_most_searched_keyword.show(truncate=False)
     print(df_most_searched_keyword)    
     
-    # print('Saving the final result to csv file at path:', path_to_save)
-    # df_most_searched_keyword.repartition(1).write.csv(path_to_save,
-    #                                        #mode = 'overwrite',
-    #                                        header = True)
+    print('Saving the final result to csv file at path:', path_to_save)
+    df_most_searched_keyword.repartition(1).write.csv(path_to_save,
+                                           #mode = 'overwrite',
+                                           header = True)
     
     check_flag = input('Write to mysql? (Y/n): ')
     if check_flag.lower() != 'y':
