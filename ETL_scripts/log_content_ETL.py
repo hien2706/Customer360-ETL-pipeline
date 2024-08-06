@@ -211,11 +211,11 @@ def write_to_MySQL(df,host,port,database_name,table,user,password):
 def main(path_to_read,path_to_save,
          start_date,end_date):
     
-    # print('-------------Validating paths--------------')
-    # if not os.path.exists(path_to_read):
-    #     return print(f"{path_to_read} does not exist to read from")
-    # if os.path.exists(path_to_save):
-    #     return print(f"{path_to_save} already exists")
+    print('-------------Validating paths--------------')
+    if not os.path.exists(path_to_read):
+        return print(f"{path_to_read} does not exist to read from")
+    if os.path.exists(path_to_save):
+        return print(f"{path_to_save} already exists")
     
     print('-------------Finding json files from path--------------')
     json_files = find_json_file(path_to_read,start_date,end_date)
@@ -273,38 +273,21 @@ def main(path_to_read,path_to_save,
     df_union.show(30,truncate = False)
     print(df_union)
     
-    # print('-------------Saving result into csv file--------------')
-    # save_data(df_union,path_to_save)
+    print('-------------Saving result into csv file--------------')
+    save_data(df_union,path_to_save)
     
     check_flag = input('Write to mysql? (Y/n): ')
     if check_flag.lower() != 'y':
         return print('Task finished')
-    # host = input('enter hostname:')
-    # port = input('enter port:')
-    # user = input('enter user:')
-    # password = input('enter password:')
-    # database_name = input('enter database name:')
-    # table = input('enter table name:')
-    
-    # # MySQL credentials 
-    # port = 3306
-    # host = "localhost"
-    # database_name = 'usr_activities'
-    # table = 'customer_interaction_data'
-    # user = 'hien2706'
-    # password = '5conmeocoN@'
-    
-    # RDS MySQL credentials
-    host = "customer360-db.c1uy4eie6gye.ap-southeast-1.rds.amazonaws.com"
-    port = 3306
-    database_name = "customer_data"
-    table = "customer_interaction_data"
-    user = "admin"
-    password = "5conmeocon"
+    host = input('enter hostname:')
+    port = input('enter port:')
+    user = input('enter user:')
+    password = input('enter password:')
+    database_name = input('enter database name:')
+    table = input('enter table name:')
 
-    df_test = df_union.limit(250)
     print('-------------Loading result into MySql db--------------')
-    write_to_MySQL(df = df_test,
+    write_to_MySQL(df = df_union,
                 host = host,
                 port= port,
                 database_name = database_name,
@@ -316,23 +299,15 @@ def main(path_to_read,path_to_save,
 
 
 if __name__ == "__main__":
-    # path_to_read = input("Enter the path to read data: ")
-    # path_to_save = input("Enter the path to save results: ")
-    # start_date = int(input("Enter the start date to take data (YYYYMMDD): "))
-    # end_date = int(input("Enter the end date to take data (YYYYMMDD): "))
-    
-    path_to_read = "/home/hien2706/hien_data/lop_DE/log_content"
-    path_to_save = "/home/hien2706/hien_data/lop_DE/result_class_3/"
-    start_date = 20220401
-    end_date = 20220430
-    
+    path_to_read = input("Enter the path to read data: ")
+    path_to_save = input("Enter the path to save results: ")
+    start_date = int(input("Enter the start date to take data (YYYYMMDD): "))
+    end_date = int(input("Enter the end date to take data (YYYYMMDD): "))
 
     main(path_to_read = path_to_read, 
         path_to_save = os.path.join(path_to_save,f"{start_date}-{end_date}"),
         start_date = start_date,
         end_date = end_date)    
 
-#/home/hien2706/hien_data/lop_DE/log_content
-#/home/hien2706/hien_data/lop_DE/result_class_3/result
 
 
