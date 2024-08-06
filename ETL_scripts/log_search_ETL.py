@@ -141,28 +141,13 @@ def main(path_to_read,path_to_save,path_of_mapping_file):
     check_flag = input('Write to mysql? (Y/n): ')
     if check_flag.lower() != 'y':
         return print('Task finished')
-    # host = input('enter hostname:')
-    # port = input('enter port:')
-    # user = input('enter user:')
-    # password = input('enter password:')
-    # database_name = input('enter database name:')
-    # table = input('enter table name:')
-    
-    # # MySQL credentials 
-    # port = 3306
-    # host = "localhost"
-    # database_name = 'usr_activities'
-    # table = 'customer_behavior_data'
-    # user = 'hien2706'
-    # password = '5conmeocoN@'
-    
-    # RDS MySQL credentials
-    host = "customer360-db.c1uy4eie6gye.ap-southeast-1.rds.amazonaws.com"
-    port = 3306
-    database_name = "customer_data"
-    table = "customer_behavior_data"
-    user = "admin"
-    password = "5conmeocon"
+             
+    host = input('enter hostname:')
+    port = input('enter port:')
+    user = input('enter user:')
+    password = input('enter password:')
+    database_name = input('enter database name:')
+    table = input('enter table name:')
     
     print('-------------Loading result into MySql db--------------')
     write_to_MySQL(df = df_most_searched_keyword,
@@ -178,19 +163,13 @@ def main(path_to_read,path_to_save,path_of_mapping_file):
 
 
 if __name__ == "__main__":
-    # path_to_read = input("Enter the path to read data: ")
-    # path_to_save = input("Enter the path to save results: ")
-    # path_of_mapping_file = input("Enter the path of mapping file: ")
-    
-    path_to_read = "/home/hien2706/hien_data/lop_DE/log_search"
-    path_of_mapping_file = "/home/hien2706/hien_code/lop_DE/class_3/mapping.csv"
-    path_to_save = "/home/hien2706/hien_data/lop_DE/output_log_search"
-    
+    path_to_read = input("Enter the path to read data: ")
+    path_to_save = input("Enter the path to save results: ")
+    path_of_mapping_file = input("Enter the path of mapping file: ")    
 
     main(path_to_read = path_to_read, 
         path_to_save = path_to_save,
         path_of_mapping_file = path_of_mapping_file)
 
-#/home/hien2706/hien_data/lop_DE/log_content
-#/home/hien2706/hien_data/lop_DE/result_class_3/result
+
 
