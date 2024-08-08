@@ -49,5 +49,5 @@ data are loaded into RDS MySQL, there are two tables: customer_behavior_data, an
 
 #### Analyze
 PowerBI is used to create dashboard whose data is loaded from RDS MySQL\
-Dashboard:\
-![DashBoard](https://github.com/hien2706/Customer360/blob/main/pictures/customer_data.pdf)
+![Dashboard](https://github.com/hien2706/Customer360/blob/main/pictures/customer_data.pdf):\
+![DashBoard](https://github.com/hien2706/Customer360/blob/main/pictures/dashboard.png)
