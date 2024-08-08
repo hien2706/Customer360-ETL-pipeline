@@ -18,8 +18,8 @@ PySpark is used to extract data from HDFS. There are 2 types of data: interactio
 
 #### Transform
 PySpark is ultilized to transform data
-##### interaction data
-Script used: log_content_ETL.py
+##### Interaction data
+Script used: log_content_ETL.py \
 Steps included:
 - categorize AppName column and calculate total duration of each contract has with each category
 - Calculate total devices that each Contract uses
@@ -31,3 +31,8 @@ Steps included:
 Table before:
 
 Table after:
+
+##### Behavior data
+Script used: log_search_ETL.py \
+Steps included:
+
