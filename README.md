@@ -29,7 +29,7 @@ Steps included:
 - Segment Customers into categories
 
 Table before:\
-![interaction_data_before](https://github.com/hien2706/Customer360/blob/main/pictures/interaction_data_before.png)
+![interaction_data_before](https://github.com/hien2706/Customer360/blob/main/pictures/interaction_data_before.png)\
 Table after:\
 ![interaction_data_after](https://github.com/hien2706/Customer360/blob/main/pictures/interaction_data_after.png)
 ##### Behavior data
@@ -41,7 +41,7 @@ Steps included:
 - Calculate new column Trending_Type to see if the category change or unchange within 2 months
 - Calculate new column Previous to show the change in category within 2 months if it happens
 Table before:\
-![behavior_data_before](https://github.com/hien2706/Customer360/blob/main/pictures/behavior_data_before.png)
+![behavior_data_before](https://github.com/hien2706/Customer360/blob/main/pictures/behavior_data_before.png)\
 Table after:\
 ![behavior_data_after](https://github.com/hien2706/Customer360/blob/main/pictures/behavior_data_after.png)
 #### Load
@@ -49,5 +49,5 @@ data are loaded into RDS MySQL, there are two tables: customer_behavior_data, an
 
 #### Analyze
 PowerBI is used to create dashboard whose data is loaded from RDS MySQL\
-Dashboard:
-
+Dashboard:\
+![DashBoard](https://github.com/hien2706/Customer360/blob/main/pictures/customer_data.pdf)
