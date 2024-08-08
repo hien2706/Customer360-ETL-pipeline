@@ -41,6 +41,7 @@ Steps included:
 - Categorize the most searched keyword for each user.
 - Calculate a new column `Trending_Type` to identify if the category changed or remained unchanged within 2 months.
 - Calculate a new column `Previous` to show any changes in category within 2 months, if applicable.
+  
 Before Transformation:\
 ![behavior_data_before](https://github.com/hien2706/Customer360/blob/main/pictures/behavior_data_before.png)\
 After Transformation:\
