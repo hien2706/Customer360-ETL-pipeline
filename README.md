@@ -35,4 +35,19 @@ Table after:
 ##### Behavior data
 Script used: log_search_ETL.py \
 Steps included:
+- Sort out NULL values, month 6 and 7
+- Find Most search keyword of each user_id in month 6 and 7
+- categorize most search keyword of each user
+- Calculate new column Trending_Type to see if the category change or unchange within 2 months
+- Calculate new column Previous to show the change in category within 2 months if it happens
+Table before:
+
+Table after:
+
+#### Load
+data are loaded into RDS MySQL, there are two tables: customer_behavior_data, and customer_interaction_data
+
+#### Analyze
+PowerBI is used to create dashboard whose data is loaded from RDS MySQL\
+Dashboard:
 
