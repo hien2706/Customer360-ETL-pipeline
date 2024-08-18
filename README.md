@@ -3,7 +3,7 @@
 ## Overview
 This project involves building an ETL pipeline using PySpark to load customer data from parquet and json files, transform them into OLAP outputs, save them into a csv file and load them into a Azure MySQL database. PowerBI is used to create dashboards based on the data loaded from the database.
 
-![project pipeline]([https://github.com/hien2706/Customer360/blob/main/pictures/Customer360_data_pipeline.png](https://github.com/hien2706/Customer360/blob/main/pictures/ETL_pipeline_new.png))
+![project pipeline](https://github.com/hien2706/Customer360/blob/main/pictures/ETL_pipeline_new.png)
 
 Technologies used:
 - PySpark
