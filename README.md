@@ -1,12 +1,11 @@
 # Customer360 data engineering project
 
 ## Overview
-This project involves building an ETL pipeline using PySpark to load customer data from HDFS, transform it into OLAP outputs, and load it into an RDS MySQL database. PowerBI is used to create dashboards based on the data loaded from the database.
+This project involves building an ETL pipeline using PySpark to load customer data from parquet and json files, transform them into OLAP outputs, save them into a csv file and load them into a Azure MySQL database. PowerBI is used to create dashboards based on the data loaded from the database.
 
-![project pipeline](https://github.com/hien2706/Customer360/blob/main/pictures/Customer360_data_pipeline.png)
+![project pipeline]([https://github.com/hien2706/Customer360/blob/main/pictures/Customer360_data_pipeline.png](https://github.com/hien2706/Customer360/blob/main/pictures/ETL_pipeline_new.png))
 
 Technologies used:
-- HDFS
 - PySpark
 - AWS RDS MySQL
 - PowerBI
@@ -14,7 +13,7 @@ Technologies used:
 ### Project Details
 
 #### Extract
-PySpark is used to extract two types of data from HDFS: interaction data and behavior data.
+PySpark is used to extract two types of data: interaction data and behavior data.
 
 #### Transform
 PySpark is utilized to transform the data.
