@@ -342,21 +342,21 @@ def main(log_content_path,
 
     df_union.show(30,truncate=False)
     
-    # print('Saving data into csv file')
-    # save_data(df_union,path_to_save)
+    print('Saving data into csv file')
+    save_data(df_union,path_to_save)
     
-    # check_flag = input('Write to mysql? (Y/n): ')
-    # if check_flag.lower() != 'y':
-    #     return print('Task finished')
+    check_flag = input('Write to mysql? (Y/n): ')
+    if check_flag.lower() != 'y':
+        return print('Task finished')
     
     print('-------------Loading result into MySql db--------------')
-    # Azure MySQL db Credentials
-    port = 3306
-    host = "customer-data-project.mysql.database.azure.com"
-    database_name = 'customer_db'
-    table = 'customer_data'
-    user = 'hien2706'
-    password = fr"""&!HMy'i:pxa%g7]"""
+    host = input('enter hostname:')
+    port = input('enter port:')
+    user = input('enter user:')
+    password = input('enter password:')
+    database_name = input('enter database name:')
+    table = input('enter table name:')
+             
     write_to_MySQL(df = df_union,
                    host= host,
                    port=port,
@@ -375,14 +375,14 @@ if __name__ == "__main__":
             .config("spark.driver.memory", "6g")
             .getOrCreate())
 
-    log_content_path = "/home/hien2706/hien_data/lop_DE/log_content"
-    log_search_path = "/home/hien2706/hien_data/lop_DE/log_search"
-    path_to_save = '/home/hien2706/hien_data/lop_DE/result_class_3/output_customer_data'
-    path_of_mapping_file = "/home/hien2706/hien_code/lop_DE/class_3/mapping.csv"
-    log_content_start_date = 20220401
-    log_content_end_date = 20220430
-    log_search_start_date = 20220601
-    log_search_end_date = 20220713
+    log_content_path = input('enter log_content path: ')
+    log_search_path = input('enter log_search path: ')
+    path_to_save = input('enter path to save into a csv file: ')
+    path_of_mapping_file = input('enter path of mapping file: ')
+    log_content_start_date = input('enter the start date of log_content files')
+    log_content_end_date = input('enter the end date of log_content files')
+    log_search_start_date = input('enter the start date of log_search files')
+    log_search_end_date = input('enter the end date of log_search files')
     
     main(log_content_path,
          log_search_path,
