@@ -7,7 +7,7 @@ This project involves building an ETL pipeline using PySpark to load customer da
 
 Technologies used:
 - PySpark
-- AWS RDS MySQL
+- Azure MySQL
 - PowerBI
 
 ### Project Details
@@ -45,8 +45,11 @@ Before Transformation:\
 ![behavior_data_before](https://github.com/hien2706/Customer360/blob/main/pictures/behavior_data_before.png)\
 After Transformation:\
 ![behavior_data_after](https://github.com/hien2706/Customer360/blob/main/pictures/behavior_data_after.png)
+
+Finally, the transformed log_content and log_search datasets are unionized based on user_id and contract. \
+
 #### Load
-The transformed data is loaded into RDS MySQL. There are two tables: `customer_behavior_data` and `customer_interaction_data`.
+The transformed data is saved into csv file and loaded into RDS MySQL.
 
 #### Analyze
 PowerBI is used to create dashboards based on the data loaded from RDS MySQL.\
