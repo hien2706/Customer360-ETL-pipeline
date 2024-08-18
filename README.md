@@ -47,11 +47,13 @@ After Transformation:\
 ![behavior_data_after](https://github.com/hien2706/Customer360/blob/main/pictures/behavior_data_after.png)
 
 Finally, the transformed log_content and log_search datasets are unionized based on user_id and contract. \
+Final result: \
+![final_result](https://github.com/hien2706/Customer360/blob/main/pictures/customer_data_final.png)
 
 #### Load
-The transformed data is saved into csv file and loaded into RDS MySQL.
+The transformed data is saved into csv file and loaded into Azure MySQL.
 
 #### Analyze
-PowerBI is used to create dashboards based on the data loaded from RDS MySQL.\
+PowerBI is used to create dashboards .\
 ![Dashboard](https://github.com/hien2706/Customer360/blob/main/pictures/customer_data.pdf):\
 ![DashBoard](https://github.com/hien2706/Customer360/blob/main/pictures/dashboard.png)
